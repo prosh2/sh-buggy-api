@@ -19,4 +19,4 @@ COPY . /app
 EXPOSE 8080
 
 # Start app in production mode
-CMD ["poetry", "run", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "${PORT}"]
+CMD ["sh", "-c", "poetry run uvicorn app.main:app --host 0.0.0.0 --port $PORT"]
